@@ -6,4 +6,4 @@ Calculates tip on the basis of total cost spent on service
 ### Launcher Icons
 ### Material design components (MDC)
 ### Themes and Styles
-### Instrumented Testing
+### Instrumentation Testing

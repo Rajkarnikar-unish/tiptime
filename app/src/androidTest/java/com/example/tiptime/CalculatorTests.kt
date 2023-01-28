@@ -25,10 +25,48 @@ class CalculatorTests {
             .perform(typeText("50.0"))
             .perform(ViewActions.closeSoftKeyboard())
 
+        onView(withId(R.id.option_twenty_percent))
+            .perform(click())
+            .check(matches(withText(containsString("20%"))))
+
         onView(withId(R.id.calculate_button))
             .perform(click())
 
         onView(withId(R.id.tip_result))
             .check(matches(withText(containsString("$10.00"))))
+    }
+
+    @Test
+    fun calculate_18_percent_tip() {
+        onView(withId(R.id.cost_of_service_edit_text))
+            .perform(typeText("50.0"))
+            .perform(ViewActions.closeSoftKeyboard())
+
+        onView(withId(R.id.option_eighteen_percent))
+            .perform(click())
+            .check(matches(withText(containsString("18%"))))
+
+        onView(withId(R.id.calculate_button))
+            .perform(click())
+
+        onView(withId(R.id.tip_result))
+            .check(matches(withText(containsString("$9.00"))))
+    }
+
+    @Test
+    fun calculate_15_percent_tip() {
+        onView(withId(R.id.cost_of_service_edit_text))
+            .perform(typeText("50.0"))
+            .perform(ViewActions.closeSoftKeyboard())
+
+        onView(withId(R.id.option_fifteen_percent))
+            .perform(click())
+            .check(matches(withText(containsString("15%"))))
+
+        onView(withId(R.id.calculate_button))
+            .perform(click())
+
+        onView(withId(R.id.tip_result))
+            .check(matches(withText(containsString("$8.00"))))
     }
 }
